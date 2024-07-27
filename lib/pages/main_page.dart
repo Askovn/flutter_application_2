@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/screens/profile.dart'; // Импортируем ProfilePage
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -13,9 +14,9 @@ class _MainPageState extends State<MainPage> {
   static const List<Widget> _widgetOptions = <Widget>[
     Text('Задачи'),
     Text('Сегодня'),
-    Text('Профиль'),
     Text('Выполнено'),
-  ];
+    ProfilePage(), // Заменяем Text на ProfilePage
+      ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -32,13 +33,13 @@ class _MainPageState extends State<MainPage> {
         elevation: 0, // Убираем тень
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              const Color(0xFF9f7bf6), // Primary color
-              const Color(0xFF4ceb8b), // Secondary color
+              Color(0xFF9f7bf6), // Primary color
+              Color(0xFF4ceb8b), // Secondary color
             ],
           ),
         ),
@@ -56,14 +57,15 @@ class _MainPageState extends State<MainPage> {
             icon: Icon(Icons.calendar_today),
             label: 'Сегодня',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Профиль',
-          ),
-          BottomNavigationBarItem(
+           BottomNavigationBarItem(
             icon: Icon(Icons.check_circle),
             label: 'Выполнено',
           ),
+           BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Профиль',
+          ),
+
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
