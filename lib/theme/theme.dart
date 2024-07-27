@@ -9,13 +9,18 @@ class DoDidDoneTheme {
     ),
     useMaterial3: true,
     // Добавляем стиль для кнопок
-   elevatedButtonTheme: ElevatedButtonThemeData(
-  style: ButtonStyle(
-    foregroundColor: MaterialStateProperty.all<Color>(Colors.white), // Текст кнопок белый
-    textStyle: MaterialStateProperty.all<TextStyle>(
-      const TextStyle(color: Colors.white), // Текст кнопок белый
-    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        foregroundColor: MaterialStateProperty.all<Color>(Colors.white), // Текст кнопок белый
+        textStyle: MaterialStateProperty.all<TextStyle>(
+          const TextStyle(color: Colors.white), // Текст кнопок белый
+        ),
       ),
     ),
+    // Добавляем стиль для BottomNavigationBar
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      selectedItemColor: const Color(0xFF9f7bf6), // Основной цвет для выбранных иконок
+      unselectedItemColor: Colors.grey, // Серый цвет для невыбранных иконок
+    ),
   );
-} 
+}

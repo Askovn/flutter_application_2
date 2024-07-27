@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/pages/main_page.dart';
 import 'package:flutter_application_2/theme/theme.dart';
 
 class LoginPage extends StatefulWidget {
@@ -87,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               const SizedBox(height: 30),
               ElevatedButton(
-                onPressed: () {
+                onPressed: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const MainPage())) ;
                   // Обработка входа/регистрации
                 },
                 style: ElevatedButton.styleFrom(
